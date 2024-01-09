@@ -1,4 +1,4 @@
-Depoly: https://wonderful-dragon-7baf2c.netlify.app/
+Deploy no netlify para visualizar execução: https://wonderful-dragon-7baf2c.netlify.app/
 
 # Getting Started with Create React App
 
