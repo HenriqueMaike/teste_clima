@@ -1,10 +1,10 @@
+import styles from './styles.module.scss';
 import React, { useEffect, useState } from 'react';
 import api from '../../services/api';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
-import styles from './style.module.scss';
+
 
 function Home() {
     const [city, setCity] = useState('');
@@ -48,7 +48,7 @@ function Home() {
         }
     }, [city, name]);
 
-    function buscarCidade(e){
+    function buscarCidade(e) {
         e.preventDefault();
 
         setName(cidade);
@@ -57,29 +57,32 @@ function Home() {
 
     return (
         <div className={styles.container}>
-            <form className='form' onSubmit={buscarCidade}>
-                <Form.Control 
-                    type="text"
-                    placeholder='Digite sua cidade'
-                    onChange={(e) => setCidade(e.target.value)}
-                    value={cidade}
-                />
-                <Button as="input" type="submit" value="Buscar" />
-            </form>
-            {clima && (
-                <article key={clima.city}><br /><br />
-                    <strong>{clima.name}</strong>
-                    <div>
-                        <p>Temperatura: {clima.main.temp}</p>
-                        <p>Descrição: {clima.weather[0].description}</p>
-                        <img
-                            src={`https://openweathermap.org/img/wn/${clima.weather[0].icon}@2x.png`}
-                            alt={clima.weather[0].description}
-                        />
-                        <p>Principal: {clima.weather[0].main}</p>
-                    </div>
-                </article>
-            )}
+            <div className={styles.containerChild}>
+                <form className={styles.form} onSubmit={buscarCidade}>
+                    <Form.Control
+                        className={styles.input}
+                        type="text"
+                        placeholder='Digite sua cidade'
+                        onChange={(e) => setCidade(e.target.value)}
+                        value={cidade}
+                    />
+                    <Button as="input" type="submit" value="Buscar" />
+                </form>
+                {clima && (
+                    <article className={styles.clima} key={clima.city}><br /><br />
+                        <strong>{clima.name}</strong>
+                        <div>
+                            <p>Temperatura: {clima.main.temp} °C</p>
+                            <p>Descrição: {clima.weather[0].description}</p>
+                            <img
+                                src={`https://openweathermap.org/img/wn/${clima.weather[0].icon}@2x.png`}
+                                alt={clima.weather[0].description}
+                            />
+                            <p>Principal: {clima.weather[0].main}</p>
+                        </div>
+                    </article>
+                )}
+            </div>
         </div>
     );
 }
