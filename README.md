@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+Depoly => https://659d687c67d89d1cd3e00c32--wonderful-dragon-7baf2c.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
