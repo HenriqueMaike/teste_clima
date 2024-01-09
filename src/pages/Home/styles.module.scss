@@ -1,3 +1,14 @@
+:root{
+    --body_background: #FFF;
+    --body_color: #000;
+}
+
+[data-theme="dark"]{
+    --body_background: #282c34;
+    --body_color: #FFF;
+    --input_color: #535353;
+}
+
 *{
     margin: 0px;
     padding: 0px;
@@ -10,20 +21,23 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: #e9e8e8;
+    flex-direction: column;
+    background-color: var(--body_background);
+    gap: 30px;
 }
 
 .containerChild{
     display: flex;
     width: 90%;
     max-width: 500px;
-    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-    background-color: #FFF;
+    min-height: 300px;
+    box-shadow: 0px 0px 18px 25px rgba(0,0,0,0.1);
+    background-color: var(--body_background);
     border-radius: 10px;
     padding: 20px;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
+    color: var(--body_color);
 }
 
 .form{
@@ -34,6 +48,7 @@
 .input{
     display: flex;
     max-width: 300px;
+    background-color: inherit;
 }
 
 .clima{
